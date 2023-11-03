@@ -45,3 +45,15 @@ INSERT INTO userdetail (user_id, first_name, last_name, mobile_number) VALUES
     (8, 'Emily', 'Parker', '555-111-7777'),
     (9, 'Ryan', 'King', '999-333-6666'),
     (10, 'Olivia', 'Green', '888-777-5555');
+
+SELECT CONCAT(ud.first_name, " ", ud.last_name) AS name, u.email, ud.mobile_number FROM users u INNER JOIN userdetail ud ON u.user_id = ud.user_id;
+
+SELECT CONCAT(ud.first_name, " ", ud.last_name) AS name, u.email, ud.mobile_number FROM users u LEFT JOIN userdetail ud ON u.user_id = ud.user_id;
+
+SELECT CONCAT(ud.first_name, " ", ud.last_name) AS name, u.email, ud.mobile_number FROM users u RIGHT JOIN userdetail ud ON u.user_id = ud.user_id;
+
+INNER JOIN: Retrieves only matching rows from both tables.
+LEFT JOIN: Retrieves all rows from the left table and matching rows from the right table. Unmatched rows from the left table have NULL values for right table columns.
+RIGHT JOIN: Retrieves all rows from the right table and matching rows from the left table. Unmatched rows from the right table have NULL values for left table columns.
+FULL OUTER JOIN: Retrieves all rows from both tables and includes NULL values for unmatched rows.
+
