@@ -57,3 +57,10 @@ LEFT JOIN: Retrieves all rows from the left table and matching rows from the rig
 RIGHT JOIN: Retrieves all rows from the right table and matching rows from the left table. Unmatched rows from the right table have NULL values for left table columns.
 FULL OUTER JOIN: Retrieves all rows from both tables and includes NULL values for unmatched rows.
 
+SELECT * FROM userdetail;
+
+INSERT INTO users (email, password) values ("eren jaegar", "attack on titan");
+
+SELECT * FROM users INNER JOIN userdetail ON users.user_id = userdetail.user_id;
+
+UPDATE USERS SET email = "eren.jaegar@gmail.com" WHERE EMAIL = "eren jaegar";
